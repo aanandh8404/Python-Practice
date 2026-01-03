@@ -1,8 +1,12 @@
 def add_digits(n):
-    temp = n
-    if len(str(temp)) == 1:
-        for i in str(n):
-            temp += int(i)
+    temp = 0
+    for i in str(n):
+        temp += int(i)
+
+    if len(str(temp)) > 1:
+        temp = add_digits(temp)
+    return temp
 
 
-n = int(input("Enter the number :"))
+num = int(input("Enter the number :"))
+print(add_digits(num))
