@@ -8,14 +8,16 @@ down = True
 for ch in str:
     res[r] += ch
 
-    if down:
-        r += 1 
-    else: 
-        r -= 1
+    if rows > 1:
+        if r == 0:
+            down = True
+        elif r == rows -1:
+            down = False
+    
+        if down:
+            r += 1 
+        else: 
+            r -= 1
 
-    if r == 0:
-        down = True
-    elif r == rows -1:
-        down = False
 
 print("".join(res))
